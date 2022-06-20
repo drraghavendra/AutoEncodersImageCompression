@@ -3,6 +3,24 @@ Using Auto Encoders for image compression
 
 # Introduction
 
+
+An autoencoder is a special type of neural network that is trained to copy its input to its output. For example, given an image of a handwritten digit, an autoencoder first encodes the image into a lower dimensional latent representation, then decodes the latent representation back to an image. An autoencoder learns to compress the data while minimizing the reconstruction error.
+
+To learn more about autoencoders, please consider reading chapter 14 from Deep Learning by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+
+Import TensorFlow and other libraries
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import tensorflow as tf
+
+from sklearn.metrics import accuracy_score, precision_score, recall_score
+from sklearn.model_selection import train_test_split
+from tensorflow.keras import layers, losses
+from tensorflow.keras.datasets import fashion_mnist
+from tensorflow.keras.models import Model
+
 This project mainly follows the Tensorflow Autoencoders Tutorial (More info at: https://www.tensorflow.org/tutorials/generative/autoencoder)
 
 The notebook contains the steps taken to compress an 28x28 size image to a 7x7 size array which occupies roughly 0.5x space occupied by the original images
